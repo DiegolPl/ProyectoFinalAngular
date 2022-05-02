@@ -1,0 +1,178 @@
+:root {
+    --darkBlue:#1C658C;
+    --lightBlue:#398AB9;
+    --lightBrown:#D8D2CB;
+    --white:#EEEEEE;
+}
+
+.header {
+    width: 100%;
+    background-color: var(--lightBlue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-img {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.logo-text {
+    color: var(--white);
+}
+
+.menu-navbar {
+    position: absolute;
+    z-index: 95000;
+    top: 99%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 84.5vh;
+    background-color: var(--lightBlue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 15rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path .3s linear;
+
+}
+
+.active {
+    /* top:99%; */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menu-navbar .link {
+    text-decoration: none;
+    color: inherit;
+    height: 40px;
+    width: 30%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+    font-size: 2.15rem;
+    color: var(--white);
+    font-weight: 300;
+}
+
+.menu-navbar .link.login-btn {
+    width: 35%;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--lightBrown);
+    color: var(--darkBlue);
+    text-align: center;
+}
+
+.menu-btn {
+    padding-right: 2rem;
+    font-size: 2.25rem;
+    color: var(--white);
+}
+
+.fa-xmark {
+    font-size: 2.5rem;
+}
+
+@media (min-width:768px){
+
+    .header {
+        padding: 0 .5rem;
+    }
+
+    .logo-text {
+        font-size: 1.35rem;
+    }
+    
+    .logo-img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .menu-navbar {
+        position: relative;
+        z-index: 100;
+        width: max-content;
+        top: initial;
+        left: initial;
+        right: initial;
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+        padding-top: 0;
+        clip-path: initial;
+        transition: none;
+    }
+    
+    .menu-navbar .link.login-btn {
+        font-weight: 400;
+        padding: 1rem 1rem;
+        width: 35%;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .menu-navbar .link {
+        width: 40%;
+        margin: 1rem;
+        padding: 1rem 1rem;
+        font-size: 2.35rem;
+    }
+
+    .menu-navbar .link:hover {
+        padding: 1rem 1rem;
+        border-radius: 50%;
+        background-color: var(--white);
+        color: var(--darkBlue);
+    }
+
+    .link-name {
+        display: none;
+    }
+    
+    .header #menu-btn {
+        display: none;
+    }
+
+    
+
+    .modal-ventana {
+        backdrop-filter: blur(.3rem);
+    }
+
+    .form-login {
+        --darkBlue:#12435e;
+        --lightBlue:#2a6588;
+        position: relative;
+        width: 40%;
+        min-height: 400px;
+        padding: 5rem 5rem;
+        /* border: 1px solid #111; */
+        background-image: linear-gradient(40deg, var(--lightBlue) 30%, var(--darkBlue) 70%);
+    }
+    
+    
+}

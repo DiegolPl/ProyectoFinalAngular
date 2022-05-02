@@ -1,0 +1,39 @@
+<header class="header">
+    <div class="logo">
+        <img src="../../../assets/images/logo-argpro-v4.png" alt="Logo Argentina Programa" class="logo-img">
+        <div class="logo-text">
+            <h2>Argentina Programa</h2>
+            <h3>#YoProgramo</h3>
+        </div>
+    </div>
+    <nav class="menu-navbar swap" id="menu-navbar">
+        
+        <a href="#" class="link">
+            <!-- <i class="fa-brands fa-github"></i> -->
+            <fa-icon [icon]="faGithub"></fa-icon>
+            <p class="link-name">Github</p>
+        </a>
+        <a href="#" class="link">
+            <!-- <i class="fa-brands fa-twitter"></i> -->
+            <fa-icon [icon]="faTwitter"></fa-icon>
+            <p class="link-name">Twitter</p>
+        </a>
+        <a href="#" class="link">
+            <!-- <i class="fa-brands fa-instagram"></i> -->
+            <fa-icon [icon]="faInstagram"></fa-icon>
+            <p class="link-name">Instagram</p>
+        </a>
+        <a class="link login-btn btn-login-activador" id="btn-login">
+            <!-- <i class="fa-solid fa-user" id="icono-user"></i> -->
+            <fa-icon [icon]="faUser" id="icono-user"></fa-icon>
+            <p class="link-name">Login</p>
+        </a>
+        <a class="link login-btn d-none" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket" id="icono-logout"></i>
+            <p class="link-name">Logout</p>
+        </a>
+    </nav>
+    <!-- <i class="fa-solid fa-bars menu-btn" id="menu-btn"></i> -->
+    <!-- <i class="fa-solid fa-xmark"></i> se debe cambiar por ese al abrir el menu en modo movil -->
+    <fa-icon [icon]="faBars" class="menu-btn fa-bars" id="menu-btn"></fa-icon>
+</header>
