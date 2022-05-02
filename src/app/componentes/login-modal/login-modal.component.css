@@ -1,0 +1,125 @@
+.modal-ventana {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #1119;
+    backdrop-filter: blur(.15rem);
+}
+
+.modal-ventana-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login {
+    position: relative;
+    width: 75%;
+    min-height: 300px;
+    padding: 5rem 2rem;
+    /* border: 1px solid #111; */
+    background-image: linear-gradient(40deg, var(--lightBlue) 30%, var(--darkBlue) 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: .5rem .5rem 2rem #1117;
+
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: all .8s ease-in-out;
+}
+
+.modal-close-btn:hover {
+    transform: rotate(180deg);
+}
+
+.form-login-title {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.form-login .modal-box {
+    width: 100%;
+    position: relative;
+    color: var(--white);
+
+}
+
+
+.modal-box .input-login {
+    width: 100%;
+    /* border-radius: 1rem; */
+    border: none;
+    border-bottom: 3px solid var(--darkBlue);
+    outline: none;
+    padding: 2.5rem 2.4rem .75rem;
+    background-color: transparent;
+    color: var(--white);
+}
+
+.modal-box .label-login {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    font-size: 1.8rem;
+    transition: all .2s linear;
+    text-transform: uppercase;
+}
+
+.modal-box .input-login:focus ~ .label-login,
+.modal-box .input-login ~ .label-top {
+    top: 7%;
+    font-size: 1.25rem;
+}
+
+.form-login-btn {
+    outline: none;
+    border: 3px solid var(--darkBlue);
+    background-color: var(--lightBlue);
+    color: var(--white);
+    padding: 1.5rem 3rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+}
+
+.form-login-btn:hover {
+    background-color: var(--darkBlue);
+    /* color: var(--darkBlue); */
+    border-color: var(--white);
+    cursor: pointer;
+}
+
+@media (min-width:768px){
+
+    .modal-ventana {
+        backdrop-filter: blur(.3rem);
+    }
+
+    .form-login {
+        --darkBlue:#12435e;
+        --lightBlue:#2a6588;
+        position: relative;
+        width: 40%;
+        min-height: 400px;
+        padding: 5rem 5rem;
+        /* border: 1px solid #111; */
+        background-image: linear-gradient(40deg, var(--lightBlue) 30%, var(--darkBlue) 70%);
+    }
+    
+}
