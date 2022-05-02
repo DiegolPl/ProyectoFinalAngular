@@ -100,6 +100,109 @@ body {
     /* position: relative; */
 }
 
+.container-seccion {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, max-content);
+    grid-auto-rows: max-content; 
+ }
+ 
+ .box-seccion {
+     position: relative;
+     min-height: 100px;
+     color: var(--darkBlue);
+     padding: 1rem 2rem;
+     display: grid;
+     grid-template-columns: 2fr 4fr;
+     grid-template-rows: repeat(1, max-content);
+     grid-auto-rows: max-content; 
+     column-gap: 2rem;
+     margin-left: 1rem;
+ }
+ 
+ /* .box-edit {
+     pointer-events: initial;
+ } */
+ 
+ .box-seccion .box-edit,
+ .card-proyecto .box-edit {
+     position: absolute;
+     right: 10px;
+     top: 0;
+     width: 40%;
+     /* display: flex; */
+     display: none;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #eee9;
+     padding: .7rem 2rem;
+     border-radius: .5rem;
+ }
+ 
+ .box-seccion > div.box-edit-flex,
+ .card-proyecto > div.box-edit-flex  {
+     display: flex;
+ }
+ 
+ .box-edit > .btn-edit {
+     font-size: 3.5rem;
+     /* color: #048808; */
+     color: #20a925;
+     cursor: pointer;
+ }
+ 
+ .box-edit > .btn-delete {
+     font-size: 3.5rem;
+     color: rgb(196, 19, 19);
+     cursor: pointer;
+ }
+ 
+ .educacion .box-seccion, .experiencia .box-seccion {
+     /* position: relative; */
+     border-left: 3px solid var(--lightBlue);
+ }
+ 
+ .hys .box-seccion {
+     grid-template-columns: 1fr;
+     min-height: 25px;
+     /* grid-template-columns: 2fr 4fr; */
+     
+ }
+ 
+ .educacion .box-seccion::after, .experiencia .box-seccion::after {
+     content: ' ';
+     width: 22px;
+     height: 22px;
+     border-radius: 50%;
+     background-color: var(--lightBlue);
+     position: absolute;
+     top: 10px;
+     left: -12.5px;
+ }
+ 
+ .box-seccion h3 {
+     margin-bottom: .5rem;
+     font-size: 1.7rem;
+ }
+ 
+ .box-seccion .box-lado-izq h3 {
+     font-size: 1.4rem;
+ }
+ 
+ .box-seccion .box-lado-izq span {
+     font-size: 1.15rem;
+ }
+ 
+ .box-seccion h4 {
+     margin-bottom: .5rem;
+     font-size: 1.25rem;
+     font-weight: 400;
+ }
+ 
+ .mini-h4 {
+     font-size: 1.1rem;
+ }
+
 @media (min-width:567px){
     
     .section-style {
