@@ -1,0 +1,60 @@
+<section class="perfil">
+    <span class="material-icons material-icons-outlined edit-btn" id="btn-edit-perfil">
+        edit
+    </span>
+
+    <div class="modal-ventana" id="modal-edit-perfil">
+        <form novalidate class="form-login form-edit">
+            <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-perfil-close"></i> -->
+            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-perfil-close"></fa-icon>
+            <h2 class="form-login-title">Modo Edición!</h2>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="edit-perfil-input-img" id="edit-perfil-label-img" class="label-modal">Imagen:</label>
+                <input type="file" name="newImg" id="edit-perfil-input-img" class="input-modal">
+            </div>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="edit-perfil-input-name" id="edit-perfil-label-name" class="label-modal">Nombre:</label>
+                <input type="text" name="newName" id="edit-perfil-input-name" class="input-modal">
+            </div>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="edit-perfil-input-title" id="edit-perfil-label-title" class="label-modal">Titulo:</label>
+                <input type="text" name="newTitle" id="edit-perfil-input-title" class="input-modal">
+            </div>
+            <!-- <div class="modal-box user-box">
+                <input type="password" name="password" id="pass-input" class="input-login">
+                <label for="pass-input" id="label-login-pass" class="label-login">Contraseña</label>
+            </div> -->
+            <input type="button" value="Editar" class="form-login-btn" id="edit-perfil-btn">
+        </form>
+    </div>
+
+    <article class="perfil-data perfil-data-position">
+        <!-- <i class="fa-solid fa-pen-circle edit-btn"></i> -->
+        <img src="../../../assets/images/pexels-thiago.jpg" alt="" class="perfil-foto" id="perfil-foto">
+        <h2 class="perfil-name" id="perfil-name">Pedro Alejandro Jesus de Leon</h2>
+        <h1 class="perfil-title" id="perfil-title">Web Developer</h1>
+    </article>
+    <section class="about about-position section-style">
+        <h2 class="title-section">acerca de mi</h2>
+        <span class="material-icons material-icons-outlined edit-btn" id="btn-edit-about">
+            edit
+        </span>
+
+        <div class="modal-ventana" id="modal-edit-about">
+            <form novalidate class="form-login form-edit">
+                <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-about-close"></i>
+                <h2 class="form-login-title">Modo Edición!</h2>
+                <div class="modal-box user-box modal-box-edit modal-box-edit-textarea">
+                    <label for="edit-about-input-title" id="edit-about-label-title" class="label-modal">Acerca de mi:</label>
+                    <textarea name="newTitle" id="edit-about-textarea" class="input-modal"></textarea>
+                </div>
+                <!-- <div class="modal-box user-box">
+                    <input type="password" name="password" id="pass-input" class="input-login">
+                    <label for="pass-input" id="label-login-pass" class="label-login">Contraseña</label>
+                </div> -->
+                <input type="button" value="Editar" class="form-login-btn" id="edit-about-btn">
+            </form>
+        </div>
+
+        <p class="about-text" id="about-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores accusantium voluptate autem quas nemo, cupiditate excepturi? Consectetur fuga ipsum, aliquam eligendi eum officia esse nam impedit rerum. Aliquid, reprehenderit soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis provident, amet quaerat deleniti quo.</p>
+</section>
