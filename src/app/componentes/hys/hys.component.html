@@ -1,0 +1,131 @@
+<section class="hys section-style">
+
+    <span class="material-icons material-icons-outlined edit-btn" id="btn-hys-main">
+        edit
+    </span>
+
+    <span class="material-icons material-icons-outlined edit-btn edit-btn-add" id="btn-hys-add">
+        add_circle_outline
+    </span>
+
+    <div class="modal-ventana" id="modal-edit-hys">
+        <form novalidate class="form-login form-edit">
+            <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-hys-close"></i> -->
+            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-hys-close"></fa-icon>
+            <h2 class="form-login-title">Modo Edición!</h2>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="new-input-hys-skill" id="new-label-hys-skill" class="label-modal">Skill:</label>
+                <input type="text" id="new-input-hys-skill" class="input-modal">
+            </div>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="new-input-hys-porcentaje" id="new-label-hys-porcentaje" class="label-modal">Porcentaje:</label>
+                <input type="number" id="new-input-hys-porcentaje" class="input-modal" min="1" max="100">
+            </div>
+            <input type="button" value="Editar" class="form-login-btn" id="edit-hys-btn">
+        </form>
+    </div>
+
+
+    <h2 class="title-section">Hard & Soft Skills</h2>
+    <!-- <span class="material-icons material-icons-outlined edit-btn">
+        edit
+    </span> -->
+    <section class="container-seccion" id="container-hys">
+        <div class="box-seccion">
+
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-hys">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-hys">
+                    cancel
+                </span>
+            </div>
+
+            <h3 class="skill-name">HTML</h3>
+            <div class="skill-box">
+                <div class="skill-bar-bg"><div class="skill-bar" style="width: 90%;" id="skill-html"></div></div><!-- Agrego id -->
+            </div>
+        </div>
+        <div class="box-seccion">
+            
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-hys">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-hys">
+                    cancel
+                </span>
+            </div>
+
+            <h3 class="skill-name">CSS</h3>
+            <div class="skill-box">
+                <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%;" id="skill-css"></div></div><!-- Agrego id -->
+            </div>
+        </div>
+        <div class="box-seccion">
+            
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-hys">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-hys">
+                    cancel
+                </span>
+            </div>
+
+            <h3 class="skill-name">JAVASCRIPT</h3>
+            <div class="skill-box">
+                <div class="skill-bar-bg"><div class="skill-bar" style="width: 60%;" id="skill-js"></div></div><!-- Agrego id -->
+            </div>
+        </div>
+        <div class="box-seccion">
+            
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-hys">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-hys">
+                    cancel
+                </span>
+            </div>
+
+            <h3 class="skill-name">MySQL</h3>
+            <div class="skill-box">
+                <div class="skill-bar-bg"><div class="skill-bar" style="width: 30%;" id="skill-mysql"></div></div><!-- Agrego id -->
+            </div>
+        </div>
+        <div class="box-seccion">
+            
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-hys">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-hys">
+                    cancel
+                </span>
+            </div>
+
+            <h3 class="skill-name">GIT</h3>
+            <div class="skill-box">
+                <div class="skill-bar-bg"><div class="skill-bar" style="width: 50%;" id="skill-git"></div></div><!-- Agrego id -->
+            </div>
+        </div>
+        <div class="box-seccion">
+            
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-hys">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-hys">
+                    cancel
+                </span>
+            </div>
+
+            <h3 class="skill-name">INGLES</h3>
+            <div class="skill-box">
+                <div class="skill-bar-bg"><div class="skill-bar" style="width: 45%;" id="skill-ingles"></div></div><!-- Agrego id -->
+            </div>
+        </div>
+    </section>
+</section>

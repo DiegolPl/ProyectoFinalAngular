@@ -10,6 +10,7 @@ import { BannerComponent } from './componentes/banner/banner.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ExperienciasComponent } from './componentes/experiencias/experiencias.component';
 import { EducacionesComponent } from './componentes/educaciones/educaciones.component';
+import { HysComponent } from './componentes/hys/hys.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EducacionesComponent } from './componentes/educaciones/educaciones.comp
     BannerComponent,
     PerfilComponent,
     ExperienciasComponent,
-    EducacionesComponent
+    EducacionesComponent,
+    HysComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+.hys .box-seccion {
+    grid-template-columns: 1fr;
+    min-height: 25px;
+    /* grid-template-columns: 2fr 4fr; */
+    
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 12px;
+    background-color: var(--lightBrown);
+}
+
+.skill-bar {
+    background-color: var(--lightBlue);
+    height: 100%;
+}
+
+@media (min-width:567px){
+    .hys .box-seccion {
+        width: 95%;
+    }
+}
+
+@media (min-width:768px){
+    .hys .box-seccion {
+        grid-template-columns: 2fr 4fr;
+    }
+}
