@@ -9,6 +9,7 @@ import { LoginModalComponent } from './componentes/login-modal/login-modal.compo
 import { BannerComponent } from './componentes/banner/banner.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ExperienciasComponent } from './componentes/experiencias/experiencias.component';
+import { EducacionesComponent } from './componentes/educaciones/educaciones.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ExperienciasComponent } from './componentes/experiencias/experiencias.c
     LoginModalComponent,
     BannerComponent,
     PerfilComponent,
-    ExperienciasComponent
+    ExperienciasComponent,
+    EducacionesComponent
   ],
   imports: [
     BrowserModule,
