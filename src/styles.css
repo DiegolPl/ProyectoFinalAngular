@@ -39,6 +39,145 @@ body {
     align-items: center;
 }
 
+.form-login {
+    position: relative;
+    width: 75%;
+    min-height: 300px;
+    padding: 5rem 2rem;
+    font-size: 2rem;
+    background-image: linear-gradient(40deg, var(--lightBlue) 30%, var(--darkBlue) 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: .5rem .5rem 2rem #1117;
+
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: all .8s ease-in-out;
+}
+
+.modal-close-btn:hover {
+    transform: rotate(180deg);
+}
+
+.form-login-title {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.form-login .modal-box {
+    width: 100%;
+    position: relative;
+    color: var(--white);
+
+}
+
+
+.modal-box .input-login {
+    width: 100%;
+    /* border-radius: 1rem; */
+    border: none;
+    border-bottom: 3px solid var(--darkBlue);
+    outline: none;
+    padding: 2.5rem 2.4rem .75rem;
+    background-color: transparent;
+    color: var(--white);
+}
+
+.modal-box .label-login {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    font-size: 1.8rem;
+    transition: all .2s linear;
+    text-transform: uppercase;
+}
+
+.modal-box .input-login:focus ~ .label-login,
+.modal-box .input-login ~ .label-top {
+    top: 7%;
+    font-size: 1.25rem;
+}
+
+.form-login-btn {
+    outline: none;
+    border: 3px solid var(--darkBlue);
+    background-color: var(--lightBlue);
+    color: var(--white);
+    padding: 1.5rem 3rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+}
+
+.form-login-btn:hover {
+    background-color: var(--darkBlue);
+    /* color: var(--darkBlue); */
+    border-color: var(--white);
+    cursor: pointer;
+}
+
+.form-edit .modal-box-edit {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    /* grid-template-columns: 2fr 5fr; */
+    /* gap: 2rem; */
+}
+
+.modal-box-edit label {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+/* .modal-box-edit label::after {
+    content: ":";
+} */
+
+.modal-box-edit input[type="text"],
+.modal-box-edit input[type="number"] {
+    border: none;
+    border-bottom: 3px solid var(--darkBlue);
+    outline: none;
+    color: var(--white);
+    background-color: transparent;
+    font-size: 1.8rem;
+}
+
+.form-edit .modal-box-edit-textarea {
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.modal-box-edit textarea {
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 150px;
+    border: 3px solid var(--darkBlue);
+    outline: none;
+    color: var(--darkBlue);
+    background-color: var(--lightBrown);
+    font-size: 1.5rem;
+    padding: .75rem;
+}
+
+.pointer-event-none {
+    pointer-events: none;
+}
+
 .edit-btn {
     display: none;
     position: absolute;
