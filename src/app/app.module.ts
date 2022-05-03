@@ -11,6 +11,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ExperienciasComponent } from './componentes/experiencias/experiencias.component';
 import { EducacionesComponent } from './componentes/educaciones/educaciones.component';
 import { HysComponent } from './componentes/hys/hys.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HysComponent } from './componentes/hys/hys.component';
     PerfilComponent,
     ExperienciasComponent,
     EducacionesComponent,
-    HysComponent
+    HysComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,

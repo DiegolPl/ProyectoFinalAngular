@@ -1,0 +1,96 @@
+<section class="proyecto section-style">
+
+    <!-- NUEVO -->
+    <span class="material-icons material-icons-outlined edit-btn" id="btn-proyecto-main">
+        edit
+    </span>
+    <span class="material-icons material-icons-outlined edit-btn edit-btn-add" id="btn-proyecto-add">
+        add_circle_outline
+    </span>
+
+    <div class="modal-ventana" id="modal-edit-proyecto">
+        <form novalidate class="form-login form-edit">
+            <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-proyecto-close"></i> -->
+            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-proyecto-close"></fa-icon>
+            <h2 class="form-login-title">Modo Edición!</h2>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="edit-proyecto-input-img" id="edit-proyecto-label-img" class="label-modal">Imagen:</label>
+                <input type="file" name="newImg" id="edit-proyecto-input-img" class="input-modal">
+            </div>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="edit-proyecto-input-titulo" id="edit-proyecto-label-titulo" class="label-modal">Titulo:</label>
+                <input type="text" name="titulo" id="edit-proyecto-input-titulo" class="input-modal">
+            </div>
+            <div class="modal-box user-box modal-box-edit">
+                <label for="edit-proyecto-input-descripcion" id="edit-proyecto-label-descripcion" class="label-modal">Descripcion:</label>
+                <input type="text" name="newDescripcion" id="edit-proyecto-input-descripcion" class="input-modal">
+            </div>
+            <input type="button" value="Editar" class="form-login-btn" id="edit-proyecto-btn">
+        </form>
+    </div>
+
+    <!-- NUEVO -->
+
+    <h2 class="title-section">Proyectos</h2>
+    <div class="container-seccion" id="container-proyecto">
+        <a href="#" class="card-proyecto">
+
+            <!-- NUEVO -->
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-proyecto">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-proyecto">
+                    cancel
+                </span>
+            </div>
+            <!-- NUEVO -->
+
+            <div class="card-top">
+                <img src="../../../assets/images/pexels-1.jpg" alt="" class="card-img">
+            </div>
+            <div class="card-bottom">
+                <h3 class="card-title">Titulo Proyecto 1 <span>- 2022</span></h3>
+                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga consequatur cum corrupti itaque iure.</p>
+            </div>
+        </a>
+        <a href="#" class="card-proyecto">
+            <!-- NUEVO -->
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-proyecto">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-proyecto">
+                    cancel
+                </span>
+            </div>
+            <!-- NUEVO -->
+            <div class="card-top">
+                <img src="../../../assets/images/pexels-2.jpg" alt="" class="card-img">
+            </div>
+            <div class="card-bottom">
+                <h3 class="card-title">Titulo Proyecto 2 <span>- 2021</span></h3>
+                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga consequatur cum corrupti itaque iure.</p>
+            </div>
+        </a>
+        <a href="#" class="card-proyecto">
+            <!-- NUEVO -->
+            <div class="box-edit">
+                <span class="material-icons material-icons-outlined btn-edit btn-edit-proyecto">
+                    edit
+                </span>
+                <span class="material-icons material-icons-outlined btn-delete btn-delete-proyecto">
+                    cancel
+                </span>
+            </div>
+            <!-- NUEVO -->
+            <div class="card-top">
+                <img src="../../../assets/images/pexels-3.jpg" alt="" class="card-img">
+            </div>
+            <div class="card-bottom">
+                <h3 class="card-title">Titulo Proyecto 3 <span>- 2021</span></h3>
+                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga consequatur cum corrupti itaque iure.</p>
+            </div>
+        </a>
+    </div>
+</section>
