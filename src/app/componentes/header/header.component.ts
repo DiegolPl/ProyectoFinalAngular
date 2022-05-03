@@ -17,6 +17,22 @@ export class HeaderComponent implements OnInit {
   faUser = faUser;
   faBars = faBars;
 
+  hidden = false;
+  hiddenMenuBtn = false;
+  hiddenCloseBtn = true;
+
+  activarMenu(){
+    this.hidden = true;
+    this.hiddenMenuBtn = true;
+    this.hiddenCloseBtn = false;
+  }
+
+  desactivarMenu(){
+    this.hidden = false;
+    this.hiddenMenuBtn = false;
+    this.hiddenCloseBtn = true;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
