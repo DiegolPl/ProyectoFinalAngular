@@ -12,6 +12,7 @@ import { ExperienciasComponent } from './componentes/experiencias/experiencias.c
 import { EducacionesComponent } from './componentes/educaciones/educaciones.component';
 import { HysComponent } from './componentes/hys/hys.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     ExperienciasComponent,
     EducacionesComponent,
     HysComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
