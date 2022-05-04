@@ -34,7 +34,7 @@
 
     <h2 class="title-section">experiencia</h2>
     <section class="container-seccion" id="container-experiencia">
-        <div class="box-seccion">
+        <div class="box-seccion" *ngFor="let experiencia of miPorfolio.experiencias">
             <div class="box-edit">
                 <span class="material-icons material-icons-outlined btn-edit btn-edit-experiencia">
                     edit
@@ -44,84 +44,12 @@
                 </span>
             </div>
             <div class="box-lado-izq">
-                <h3>2020 - 2021</h3>
-                <h4>Empresa Ejemplo 5</h4>
+                <h3>{{experiencia.fecha}}</h3>
+                <h4>{{experiencia.nombre}}</h4>
             </div>
             <div class="box-lado-dcho">
-                <h3>Cargo desarrollado</h3>
-                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore illo consectetur ipsum, voluptatibus reprehenderit quae?</h4>
-            </div>
-        </div>
-        <div class="box-seccion">
-            <div class="box-edit">
-                <span class="material-icons material-icons-outlined btn-edit btn-edit-experiencia">
-                    edit
-                </span>
-                <span class="material-icons material-icons-outlined btn-delete btn-delete-experiencia">
-                    cancel
-                </span>
-            </div>
-            <div class="box-lado-izq">
-                <h3>2020 - 2021</h3>
-                <h4>Empresa Ejemplo 4</h4>
-            </div>
-            <div class="box-lado-dcho">
-                <h3>Cargo desarrollado</h3>
-                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore illo consectetur ipsum, voluptatibus reprehenderit quae?</h4>
-            </div>
-        </div>
-        <div class="box-seccion">
-            <div class="box-edit">
-                <span class="material-icons material-icons-outlined btn-edit btn-edit-experiencia">
-                    edit
-                </span>
-                <span class="material-icons material-icons-outlined btn-delete btn-delete-experiencia">
-                    cancel
-                </span>
-            </div>
-            <div class="box-lado-izq">
-                <h3>2020 - 2021</h3>
-                <h4>Empresa Ejemplo 3</h4>
-            </div>
-            <div class="box-lado-dcho">
-                <h3>Cargo desarrollado</h3>
-                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore illo consectetur ipsum, voluptatibus reprehenderit quae?</h4>
-            </div>
-        </div>
-        <div class="box-seccion">
-            <div class="box-edit">
-                <span class="material-icons material-icons-outlined btn-edit btn-edit-experiencia">
-                    edit
-                </span>
-                <span class="material-icons material-icons-outlined btn-delete btn-delete-experiencia">
-                    cancel
-                </span>
-            </div>
-            <div class="box-lado-izq">
-                <h3>2020 - 2021</h3>
-                <h4>Empresa Ejemplo 2</h4>
-            </div>
-            <div class="box-lado-dcho">
-                <h3>Cargo desarrollado</h3>
-                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore illo consectetur ipsum, voluptatibus reprehenderit quae?</h4>
-            </div>
-        </div>
-        <div class="box-seccion">
-            <div class="box-edit">
-                <span class="material-icons material-icons-outlined btn-edit btn-edit-experiencia">
-                    edit
-                </span>
-                <span class="material-icons material-icons-outlined btn-delete btn-delete-experiencia">
-                    cancel
-                </span>
-            </div>
-            <div class="box-lado-izq">
-                <h3>2020 - 2021</h3>
-                <h4>Empresa Ejemplo 1</h4>
-            </div>
-            <div class="box-lado-dcho">
-                <h3>Cargo desarrollado</h3>
-                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore illo consectetur ipsum, voluptatibus reprehenderit quae?</h4>
+                <h3>{{experiencia.cargo}}</h3>
+                <h4>{{experiencia["descripcion-cargo"]}}</h4>
             </div>
         </div>
     </section>
