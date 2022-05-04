@@ -33,6 +33,13 @@ export class HeaderComponent implements OnInit {
     this.hiddenCloseBtn = true;
   }
 
+  abrirLogin(){
+    document.getElementById('modal-login')?.classList.toggle('modal-ventana-active');
+    document.getElementById('menu-btn-close')?.classList.add('d-none');
+    document.getElementById('menu-navbar')?.classList.remove('active');
+    document.getElementById('menu-btn')?.classList.add('d-block');
+  }
+
   constructor() { }
 
   ngOnInit(): void {
