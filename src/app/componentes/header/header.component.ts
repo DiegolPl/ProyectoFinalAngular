@@ -34,7 +34,8 @@ export class HeaderComponent implements OnInit {
     document.getElementById('menu-btn-close')?.classList.add('d-none');
     document.getElementById('menu-navbar')?.classList.remove('active');
     document.getElementById('menu-btn')?.classList.remove('d-none');
-    document.getElementById('menu-btn')?.classList.add('d-block d-md-none');
+    document.getElementById('menu-btn')?.classList.add('d-block');
+    document.getElementById('menu-btn')?.classList.add('d-md-none');
   }
 
   constructor() { }

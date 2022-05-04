@@ -20,6 +20,24 @@ export class LoginModalComponent implements OnInit {
     document.getElementById('label-login-pass')?.classList.remove('label-top');
   }
 
+  subirLabelUser(){
+    let userInput = document.getElementById('user-input') as HTMLInputElement;
+    if( userInput.value.length > 0){
+      document.getElementById('label-login-user')?.classList.add('label-top');
+    }else{
+      document.getElementById('label-login-user')?.classList.remove('label-top');
+    }
+  }
+
+  subirLabelPass(){
+    let passInput = document.getElementById('pass-input') as HTMLInputElement;
+    if( passInput.value.length > 0){
+      document.getElementById('label-login-pass')?.classList.add('label-top');
+    }else{
+      document.getElementById('label-login-pass')?.classList.remove('label-top');
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
