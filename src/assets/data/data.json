@@ -34,5 +34,86 @@
             "cargo": "Cargo desarrollado 1",
             "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 1"
         }
+    ],
+    "educacion": [
+        {
+            "nombre": "Codo a Codo",
+            "fecha": "2022 - PRESENTE",
+            "titulo": "Full Stack Developer with Node",
+            "descripcion-curso": "Lenguajes vistos: HTML, CSS, JAVASCRIPT, MYSQL, NODEJS"
+        },
+        {
+            "nombre": "ISPC",
+            "fecha": "2022 - PRESENTE",
+            "titulo": "Full Stack Developer",
+            "descripcion-curso": "Lenguajes vistos: HTML, CSS, BOOTSTRAP, JAVASCRIPT, TYPESCRIPT, ANGULAR, MYSQL, JAVA, PYTHON"
+        },
+        {
+            "nombre": "Argentina Programa",
+            "fecha": "2022 - PRESENTE",
+            "titulo": "Argentina Programa: #YoProgramo",
+            "descripcion-curso": "Lenguajes vistos: HTML, CSS, BOOTSTRAP, JAVASCRIPT, TYPESCRIPT, ANGULAR, MYSQL, JAVA"
+        },
+        {
+            "nombre": "freecodecamp.org",
+            "fecha": "2021 - PRESENTE",
+            "titulo": "Curso JavaScript Algoritmos y Estructura de Datos",
+            "descripcion-curso": "Lenguajes vistos: JAVASCRIPT"
+        },
+        {
+            "nombre": "Argentina Programa",
+            "fecha": "2021 - 2021",
+            "titulo": "Argentina Programa: #SéProgramar",
+            "descripcion-curso": "Lenguajes vistos: GOBSTONE, JAVASCRIPT, RUBY"
+        },
+        {
+            "nombre": "Polo TIC Misiones",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Introducción a la programación",
+            "descripcion-curso": "Lenguajes vistos: PSEUDO-CODIGO"
+        },
+        {
+            "nombre": "Linkedin Learning",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Github para programadores",
+            "descripcion-curso": "Visto: GIT, GitHub"
+        },
+        {
+            "nombre": "Linkedin Learning",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso MySQL Esencial",
+            "descripcion-curso": "Lenguajes visto: MySQL"
+        },
+        {
+            "nombre": "Linkedin Learning",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Javascript*",
+            "descripcion-curso": "Lenguajes visto: JAVASCRIPT",
+            "aclaracion": "*Cursos: Javascript esencial, Javascript Avanzado: buenas practicas y Javascript Avanzado: expresiones regulares"
+        },
+        {
+            "nombre": "Fundación Telefónica Movistar - Conecta Empleo",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Programación con Javascript",
+            "descripcion-curso": "Lenguajes visto: JAVASCRIPT"
+        },
+        {
+            "nombre": "Fundación Telefónica Movistar - Conecta Empleo",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Diseño Web con HTML5 y CSS",
+            "descripcion-curso": "Lenguajes visto: HTML, CSS"
+        },
+        {
+            "nombre": "Fundación Telefónica Movistar - Conecta Empleo",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Introducción a la Programación",
+            "descripcion-curso": "Lenguajes visto: PSEUDO-CODIGO"
+        },
+        {
+            "nombre": "freecodecamp.org",
+            "fecha": "2021 - 2021",
+            "titulo": "Curso Responsive Web Design",
+            "descripcion-curso": "Lenguajes visto: HTML, CSS"
+        }
     ]
 }
