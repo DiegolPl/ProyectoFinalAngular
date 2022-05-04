@@ -1,7 +1,7 @@
 <div class="modal-ventana" id="modal-login">
     <form novalidate class="form-login">
         <!-- <i class="fa-solid fa-xmark modal-close-btn" id="modal-close-btn"></i> -->
-        <fa-icon [icon]="faTimes" class="modal-close-btn" id="modal-close-btn"></fa-icon>
+        <fa-icon [icon]="faTimes" class="modal-close-btn" id="modal-close-btn" (click)="cerrarLogin()" ></fa-icon>
         <h2 class="form-login-title">Inicia sesión!</h2>
         <div class="modal-box user-box">
             <input type="text" name="usuario" id="user-input" class="input-login">

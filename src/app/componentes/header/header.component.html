@@ -6,7 +6,7 @@
             <h3>#YoProgramo</h3>
         </div>
     </div>
-    <nav class="menu-navbar swap" id="menu-navbar" [class.active]="hidden">
+    <nav class="menu-navbar swap" id="menu-navbar">
         
         <a href="#" class="link">
             <!-- <i class="fa-brands fa-github"></i> -->
@@ -35,6 +35,6 @@
     </nav>
     <!-- <i class="fa-solid fa-bars menu-btn" id="menu-btn"></i> -->
     <!-- <i class="fa-solid fa-xmark"></i> se debe cambiar por ese al abrir el menu en modo movil -->
-    <fa-icon [icon]="faBars" class="menu-btn fa-bars" id="menu-btn" [class.d-none]="hiddenMenuBtn" (click)="activarMenu()"></fa-icon>
-    <fa-icon [icon]="faTimes" class="menu-btn fa-times" id="menu-btn-close" [class.d-none]="hiddenCloseBtn" (click)="desactivarMenu()"></fa-icon>
+    <fa-icon [icon]="faBars" class="menu-btn fa-bars" id="menu-btn" (click)="activarMenu()"></fa-icon>
+    <fa-icon [icon]="faTimes" class="menu-btn fa-times d-none" id="menu-btn-close" (click)="desactivarMenu()"></fa-icon>
 </header>
