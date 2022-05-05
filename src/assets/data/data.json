@@ -115,5 +115,37 @@
             "titulo": "Curso Responsive Web Design",
             "descripcion-curso": "Lenguajes visto: HTML, CSS"
         }
+    ],
+    "hys": [
+        {
+            "nombre": "HTML",
+            "style": "width: 90%;",
+            "id": "skill-html"
+        },
+        {
+            "nombre": "CSS",
+            "style": "width: 80%;",
+            "id": "skill-css"
+        },
+        {
+            "nombre": "JAVASCRIPT",
+            "style": "width: 60%;",
+            "id": "skill-js"
+        },
+        {
+            "nombre": "MySQL",
+            "style": "width: 30%;",
+            "id": "skill-mysql"
+        },
+        {
+            "nombre": "GIT",
+            "style": "width: 50%;",
+            "id": "skill-git"
+        },
+        {
+            "nombre": "INGLES",
+            "style": "width: 40%;",
+            "id": "skill-ingles"
+        }
     ]
 }
