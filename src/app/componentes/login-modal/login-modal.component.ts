@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -7,6 +8,16 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./login-modal.component.css']
 })
 export class LoginModalComponent implements OnInit {
+
+  constructor(private dataPorfolio: PorfolioService) { }
+
+  ngOnInit(): void {
+    this.dataPorfolio.getDatos().subscribe(data => {
+      this.myPorfolio = data;
+    })
+  }
+
+  myPorfolio: any;
 
   faTimes = faTimes;
 
@@ -38,9 +49,27 @@ export class LoginModalComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  login(){
+    let userInput = document.getElementById('user-input') as HTMLInputElement;
+    let passInput = document.getElementById('pass-input') as HTMLInputElement;
+    let userValue = userInput.value;
+    let passValue = passInput.value;
 
-  ngOnInit(): void {
+    if(userValue === this.myPorfolio.credenciales.username && passValue === this.myPorfolio.credenciales.password){
+      document.querySelectorAll('.material-icons-outlined')?.forEach(icono => icono.classList.add('d-block'));
+      document.getElementById('modal-login')?.classList.toggle('modal-ventana-active');
+      userValue = "";
+      passValue = "";
+      document.getElementById('label-login-user')?.classList.remove('label-top');
+      document.getElementById('label-login-pass')?.classList.remove('label-top');
+      document.getElementById('btn-login')?.classList.toggle('d-none');
+      document.getElementById('btn-logout')?.classList.toggle('d-none');
+      document.getElementById('btn-logout')?.classList.toggle('d-block');
+      document.querySelectorAll('A').forEach(el => el.classList.add('pointer-event-none'));
+    }
   }
+
+
+  
 
 }

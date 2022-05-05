@@ -1,7 +1,7 @@
 {
     "name": "Diego Alejandro Jesus De Leon",
     "titulo": "Web Developer",
-    "urlImgPerfil": "../../../assets/images/pexels-thiago.jpg",
+    "urlImgPerfil": "../../assets/images/pexels-thiago.jpg",
     "aboutMe": "Lorem ipsum dolor holiis sit amet consectetur, adipisicing elit. Dolores accusantium voluptate autem quas nemo, cupiditate excepturi? Consectetur fuga ipsum, aliquam eligendi eum officia esse nam impedit rerum. Aliquid, reprehenderit soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis provident, amet quaerat deleniti quo.",
     "experiencias":[
         {
@@ -170,5 +170,9 @@
             "url-img": "../../../assets/images/pexels-3.jpg",
             "url-proyecto": "#"
         }
-    ]
+    ],
+    "credenciales": {
+        "username": "diego92pdl",
+        "password": "River92"
+    }
 }

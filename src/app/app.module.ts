@@ -16,6 +16,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 // Importo el modulo que me permitira aplicar en mis servicios las llamadas Http para obtener los recursos del servidor
 import { HttpClientModule } from '@angular/common/http'; 
+import { PorfolioService } from './servicios/porfolio.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PorfolioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
