@@ -66,4 +66,35 @@ export class PerfilComponent implements OnInit {
     document.getElementById('modal-edit-perfil')?.classList.toggle('modal-ventana-active');
   }
 
+  // --------- NUEVO -----------
+
+  // Accion de abrir el edit de about
+  abrirEditAbout(){
+    document.getElementById('modal-edit-about')?.classList.toggle('modal-ventana-active');
+    let inputEditAboutTextarea = document.getElementById('edit-about-textarea') as HTMLTextAreaElement;
+    
+    // Valor inicial de inputs
+    inputEditAboutTextarea.value = this.miPorfolio.aboutMe;
+  }
+  
+  // Accion de cerrar el edit de about
+  cerrarEditAbout(){
+    document.getElementById('modal-edit-about')?.classList.toggle('modal-ventana-active');
+  }
+
+  // Accion de tomar los valores del form y actualizar los valores
+  updateAbout(){
+    // Guardo el input en variable
+    let inputEditAboutTextarea = document.getElementById('edit-about-textarea') as HTMLTextAreaElement;
+
+    // Compruebo de que no haya input vacio
+    if(inputEditAboutTextarea.value === ''){
+      return alert('No debes dejar el campo vacio')
+    }
+
+    // Upgradeo el nombre y titulo 
+    this.miPorfolio.aboutMe = inputEditAboutTextarea.value;
+    // Cierro ventana de edit
+    document.getElementById('modal-edit-about')?.classList.toggle('modal-ventana-active');
+  }
 }

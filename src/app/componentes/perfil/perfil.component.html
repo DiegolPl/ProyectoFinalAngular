@@ -5,7 +5,6 @@
 
     <div class="modal-ventana" id="modal-edit-perfil">
         <form novalidate class="form-login form-edit">
-            <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-perfil-close"></i> -->
             <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-perfil-close" (click)="cerrarEditPerfil()" ></fa-icon>
             <h2 class="form-login-title">Modo Edición!</h2>
             <div class="modal-box user-box modal-box-edit">
@@ -20,40 +19,30 @@
                 <label for="edit-perfil-input-title" id="edit-perfil-label-title" class="label-modal">Titulo:</label>
                 <input type="text" name="newTitle" id="edit-perfil-input-title" class="input-modal">
             </div>
-            <!-- <div class="modal-box user-box">
-                <input type="password" name="password" id="pass-input" class="input-login">
-                <label for="pass-input" id="label-login-pass" class="label-login">Contraseña</label>
-            </div> -->
             <input type="button" value="Editar" class="form-login-btn" id="edit-perfil-btn" (click)="updatePerfil()">
         </form>
     </div>
 
     <article class="perfil-data perfil-data-position">
-        <!-- <i class="fa-solid fa-pen-circle edit-btn"></i> -->
         <img [src]="miPorfolio.urlImgPerfil" alt="" class="perfil-foto" id="perfil-foto">
         <h2 class="perfil-name" id="perfil-name">{{miPorfolio.name}}</h2>
         <h1 class="perfil-title" id="perfil-title">{{miPorfolio.titulo}}</h1>
     </article>
     <section class="about about-position section-style">
         <h2 class="title-section">acerca de mi</h2>
-        <span class="material-icons material-icons-outlined edit-btn" id="btn-edit-about">
+        <span class="material-icons material-icons-outlined edit-btn" id="btn-edit-about" (click)="abrirEditAbout()">
             edit
         </span>
 
         <div class="modal-ventana" id="modal-edit-about">
             <form novalidate class="form-login form-edit">
-                <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-about-close"></i> -->
-                <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-about-close"></fa-icon>
+                <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-about-close" (click)="cerrarEditAbout()" ></fa-icon>
                 <h2 class="form-login-title">Modo Edición!</h2>
                 <div class="modal-box user-box modal-box-edit modal-box-edit-textarea">
                     <label for="edit-about-input-title" id="edit-about-label-title" class="label-modal">Acerca de mi:</label>
                     <textarea name="newTitle" id="edit-about-textarea" class="input-modal"></textarea>
                 </div>
-                <!-- <div class="modal-box user-box">
-                    <input type="password" name="password" id="pass-input" class="input-login">
-                    <label for="pass-input" id="label-login-pass" class="label-login">Contraseña</label>
-                </div> -->
-                <input type="button" value="Editar" class="form-login-btn" id="edit-about-btn">
+                <input type="button" value="Editar" class="form-login-btn" id="edit-about-btn" (click)="updateAbout()">
             </form>
         </div>
 
