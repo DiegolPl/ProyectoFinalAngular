@@ -1,12 +1,12 @@
 <section class="perfil">
-    <span class="material-icons material-icons-outlined edit-btn" id="btn-edit-perfil">
+    <span class="material-icons material-icons-outlined edit-btn" id="btn-edit-perfil" (click)="abrirEditPerfil()">
         edit
     </span>
 
     <div class="modal-ventana" id="modal-edit-perfil">
         <form novalidate class="form-login form-edit">
             <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-perfil-close"></i> -->
-            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-perfil-close"></fa-icon>
+            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-perfil-close" (click)="cerrarEditPerfil()" ></fa-icon>
             <h2 class="form-login-title">Modo Edición!</h2>
             <div class="modal-box user-box modal-box-edit">
                 <label for="edit-perfil-input-img" id="edit-perfil-label-img" class="label-modal">Imagen:</label>
@@ -24,7 +24,7 @@
                 <input type="password" name="password" id="pass-input" class="input-login">
                 <label for="pass-input" id="label-login-pass" class="label-login">Contraseña</label>
             </div> -->
-            <input type="button" value="Editar" class="form-login-btn" id="edit-perfil-btn">
+            <input type="button" value="Editar" class="form-login-btn" id="edit-perfil-btn" (click)="updatePerfil()">
         </form>
     </div>
 
