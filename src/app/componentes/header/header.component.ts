@@ -43,6 +43,16 @@ export class HeaderComponent implements OnInit {
     document.getElementById('menu-btn')?.classList.add('d-md-none');
   }
 
+  // Sistema de deslogueo
+  logout() {
+    // Cambio los botones de logout x login
+    document.getElementById('btn-login')?.classList.remove('d-none');
+    document.getElementById('btn-logout')?.classList.add('d-none');
+    // Desactivo los botones de edit
+    document.querySelectorAll('.material-icons-outlined').forEach(icono => icono.classList.remove('d-block'));
+    // Les devuelvo el redireccionamiento a los proyectos
+    document.querySelectorAll('.proyecto A').forEach(el => el.classList.remove('pointer-event-none'));
+  }
   constructor() { }
 
   ngOnInit(): void {
