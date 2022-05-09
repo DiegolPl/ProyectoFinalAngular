@@ -65,7 +65,7 @@ export class LoginModalComponent implements OnInit {
     // Los comparo con mi json para validar
     if(userValue === this.myPorfolio.credenciales.username && passValue === this.myPorfolio.credenciales.password){
       // Activo los iconos de edit
-      document.querySelectorAll('.material-icons-outlined')?.forEach(icono => icono.classList.add('d-block'));
+      document.querySelectorAll('.menu-edit')?.forEach(icono => icono.classList.add('d-block'));
       // Cierro la ventana de login
       document.getElementById('modal-login')?.classList.toggle('modal-ventana-active');
       // Elimino los valores de dicha ventana

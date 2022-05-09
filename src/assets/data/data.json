@@ -3,36 +3,41 @@
     "titulo": "Web Developer",
     "urlImgPerfil": "../../assets/images/pexels-thiago.jpg",
     "aboutMe": "Lorem ipsum dolor holiis sit amet consectetur, adipisicing elit. Dolores accusantium voluptate autem quas nemo, cupiditate excepturi? Consectetur fuga ipsum, aliquam eligendi eum officia esse nam impedit rerum. Aliquid, reprehenderit soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis officiis provident, amet quaerat deleniti quo.",
-    "experiencias":[
+    "experiencias": [
         {
             "nombre": "Empresa nro 5",
             "fecha": "2020 - 2021",
             "cargo": "Cargo desarrollado 5",
-            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 5"
+            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 5",
+            "order": "order: 1;"
         },
         {
             "nombre": "Empresa nro 4",
             "fecha": "2020 - 2021",
             "cargo": "Cargo desarrollado 4",
-            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 4"
+            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 4",
+            "order": "order: 1;"
         },
         {
             "nombre": "Empresa nro 3",
             "fecha": "2020 - 2020",
             "cargo": "Cargo desarrollado 3",
-            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 3"
+            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 3",
+            "order": "order: 1;"
         },
         {
             "nombre": "Empresa nro 2",
             "fecha": "2019 - 2020",
             "cargo": "Cargo desarrollado 2",
-            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 2"
+            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 2",
+            "order": "order: 1;"
         },
         {
             "nombre": "Empresa nro 1",
             "fecha": "2017 - 2019",
             "cargo": "Cargo desarrollado 1",
-            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 1"
+            "descripcion-cargo": "Descripcion cargo desarrollado en la empresa nro 1",
+            "order": "order: 1;"
         }
     ],
     "educacion": [
