@@ -35,8 +35,8 @@ export class ExperienciasComponent implements OnInit {
     let boxPadreAEditar = el!.parentNode!.parentNode;
     let datos = {
             fecha: boxPadreAEditar!.children[1].children[0].textContent,
-            nombre: boxPadreAEditar!.children[1].children[1].textContent,
-            cargo: boxPadreAEditar!.children[2].children[0].textContent,
+            lugar: boxPadreAEditar!.children[1].children[1].textContent,
+            ocupacion: boxPadreAEditar!.children[2].children[0].textContent,
             descripcion: boxPadreAEditar!.children[2].children[1].textContent
         }
 
@@ -101,8 +101,8 @@ export class ExperienciasComponent implements OnInit {
             
         }
         creadorBoxInputs('experiencia-fecha','Fecha: ', datos.fecha!);
-        creadorBoxInputs('experiencia-nombre','Nombre: ', datos.nombre!);
-        creadorBoxInputs('experiencia-cargo','Cargo: ', datos.cargo!);
+        creadorBoxInputs('experiencia-lugar','Lugar: ', datos.lugar!);
+        creadorBoxInputs('experiencia-ocupacion','Ocupacion: ', datos.ocupacion!);
         creadorBoxInputs('experiencia-descripcion','Descripcion: ', datos.descripcion!);
 
         // Boton
@@ -116,13 +116,13 @@ export class ExperienciasComponent implements OnInit {
         boton.addEventListener('click',()=>{
 
             let inputFecha = document.getElementById('name-input-experiencia-fecha') as HTMLInputElement;
-            let inputNombre = document.getElementById('name-input-experiencia-nombre') as HTMLInputElement;
-            let inputCargo = document.getElementById('name-input-experiencia-cargo') as HTMLInputElement;
+            let inputLugar = document.getElementById('name-input-experiencia-lugar') as HTMLInputElement;
+            let inputOcupacion = document.getElementById('name-input-experiencia-ocupacion') as HTMLInputElement;
             let inputDescripcion = document.getElementById('name-input-experiencia-descripcion') as HTMLInputElement;
 
             boxPadreAEditar!.children[1].children[0].innerHTML = inputFecha.value;
-            boxPadreAEditar!.children[1].children[1].innerHTML = inputNombre.value;
-            boxPadreAEditar!.children[2].children[0].innerHTML = inputCargo.value;
+            boxPadreAEditar!.children[1].children[1].innerHTML = inputLugar.value;
+            boxPadreAEditar!.children[2].children[0].innerHTML = inputOcupacion.value;
             boxPadreAEditar!.children[2].children[1].innerHTML = inputDescripcion.value;
             // ventanaModal.classList.remove('modal-ventana-active');
             ventanaModal.remove();
@@ -132,12 +132,15 @@ export class ExperienciasComponent implements OnInit {
   addNewExperiencia() {
     //Validacion de inputs vacios
     let inputFecha = document.getElementById('new-input-experiencia-fecha') as HTMLInputElement;
-    let inputLugar = document.getElementById('new-input-experiencia-lugar') as HTMLInputElement;
+    let inputLugar = document.getElementById('new-input-experiencia-lugar') as HTMLInputElement; // lugar o nombre????
     let inputOcupacion = document.getElementById('new-input-experiencia-ocupacion') as HTMLInputElement;
     let inputDescripcion = document.getElementById('new-input-experiencia-descripcion') as HTMLInputElement;
     if(inputFecha.value === '' || inputLugar.value === '' || inputOcupacion.value === '' || inputDescripcion.value === ''){
       return alert('No debes dejar campos vacios')
     }
+
+    //let nuevaExp = {"nombre": inputLugar.value, "fecha": inputFecha.value, "cargo": inputOcupacion.value, "descripcion-cargo": inputDescripcion.value};
+    //this.miPorfolio.experiencias.unshift(nuevaExp);
 
     // Creacion de nueva exp
     let containerPadre: HTMLElement = document.getElementById(`container-experiencia`)!;
