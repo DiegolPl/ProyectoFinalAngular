@@ -9,7 +9,7 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class ExperienciasComponent implements OnInit {
 
-  miPorfolio:any;
+  miPorfolio:any = [];
   faTimes = faTimes;
 
   constructor(private datosPorfolio:PorfolioService) { }

@@ -8,7 +8,7 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  miPorfolio:any;
+  miPorfolio:any = [];
   faTimes = faTimes;
 
   // Inyectamos el servicio en el componente
