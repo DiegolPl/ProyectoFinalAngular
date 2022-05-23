@@ -29,6 +29,106 @@ export class ExperienciasComponent implements OnInit {
   }
 
   // Despues tengo q hacer que agregue el elemento dentro del array de experiencia en el JSON y lo de eliminar tbn
+
+  editElemExperiencia(el:any){
+    // let boxPadreAEditar = arrBtnEditEducacion[i].parentNode.parentNode;
+    let boxPadreAEditar = el!.parentNode!.parentNode;
+    let datos = {
+            fecha: boxPadreAEditar!.children[1].children[0].textContent,
+            nombre: boxPadreAEditar!.children[1].children[1].textContent,
+            cargo: boxPadreAEditar!.children[2].children[0].textContent,
+            descripcion: boxPadreAEditar!.children[2].children[1].textContent
+        }
+
+        // Creo la ventana modal
+        let ventanaModal = document.createElement('DIV');
+        ventanaModal.classList.add('modal-ventana');
+        ventanaModal.classList.add('modal-ventana-active');
+        document.getElementsByTagName('body')[0].appendChild(ventanaModal);       
+
+        // Creo el formulario de edicion
+        let formulario = document.createElement('FORM');
+        formulario.classList.add('form-login');
+        formulario.classList.add('form-edit');
+        ventanaModal.appendChild(formulario);
+
+        // Creacion de titulo
+        let titulo = document.createElement('H2');
+        titulo.classList.add('form-login-title')
+        let textoTitulo = document.createTextNode('Modo edicion!');
+        titulo.appendChild(textoTitulo);
+        formulario.appendChild(titulo);
+
+        // Creacion de boton close
+        let btnCerrar = document.createElement('I');
+        btnCerrar.classList.add('fa-solid');
+        btnCerrar.classList.add('fa-xmark');
+        btnCerrar.classList.add('modal-close-btn');
+        formulario.appendChild(btnCerrar);
+
+        // Evento boton close
+        btnCerrar.addEventListener('click', ()=>{
+            ventanaModal.classList.remove('modal-ventana-active');
+            ventanaModal.remove();
+        })
+
+        // Creacion de box y sus inputs
+        function creadorBoxInputs(id:string, nameLabel:string,value:string){
+
+            // Box container
+            let box = document.createElement('DIV');
+            box.classList.add('modal-box');   
+            box.classList.add('user-box');   
+            box.classList.add('modal-box-edit');
+            formulario.appendChild(box);
+            
+            // Label
+            let label = document.createElement('LABEL');
+            label.classList.add('label-modal');
+            label.setAttribute('for',`name-input-${id}`);
+            label.setAttribute('id',`name-label-${id}`);
+            let textoLabel = document.createTextNode(`${nameLabel}`);
+            label.appendChild(textoLabel);
+            box.appendChild(label);
+
+            // Input
+            let input = document.createElement('INPUT');
+            input.classList.add('input-modal');
+            input.setAttribute('id',`name-input-${id}`);
+            input.setAttribute('type',`text`);
+            input.setAttribute('value',`${value}`);
+            box.appendChild(input);
+            
+        }
+        creadorBoxInputs('experiencia-fecha','Fecha: ', datos.fecha!);
+        creadorBoxInputs('experiencia-nombre','Nombre: ', datos.nombre!);
+        creadorBoxInputs('experiencia-cargo','Cargo: ', datos.cargo!);
+        creadorBoxInputs('experiencia-descripcion','Descripcion: ', datos.descripcion!);
+
+        // Boton
+        let boton = document.createElement('INPUT');
+        boton.classList.add('form-login-btn');
+        boton.setAttribute('id',`name-boton-edit-experiencia`);
+        boton.setAttribute('type',`button`);
+        boton.setAttribute('value',`Editar`);
+        formulario.appendChild(boton);
+
+        boton.addEventListener('click',()=>{
+
+            let inputFecha = document.getElementById('name-input-experiencia-fecha') as HTMLInputElement;
+            let inputNombre = document.getElementById('name-input-experiencia-nombre') as HTMLInputElement;
+            let inputCargo = document.getElementById('name-input-experiencia-cargo') as HTMLInputElement;
+            let inputDescripcion = document.getElementById('name-input-experiencia-descripcion') as HTMLInputElement;
+
+            boxPadreAEditar!.children[1].children[0].innerHTML = inputFecha.value;
+            boxPadreAEditar!.children[1].children[1].innerHTML = inputNombre.value;
+            boxPadreAEditar!.children[2].children[0].innerHTML = inputCargo.value;
+            boxPadreAEditar!.children[2].children[1].innerHTML = inputDescripcion.value;
+            // ventanaModal.classList.remove('modal-ventana-active');
+            ventanaModal.remove();
+        })
+  }
+
   addNewExperiencia() {
     //Validacion de inputs vacios
     let inputFecha = document.getElementById('new-input-experiencia-fecha') as HTMLInputElement;
@@ -61,7 +161,7 @@ export class ExperienciasComponent implements OnInit {
     boxEdit.appendChild(btnEdit);
     // Funcion boton edit
     btnEdit.addEventListener('click',()=>{
-      //editElemEducacion(btnEdit);
+      this.editElemExperiencia(btnEdit);
     })
     // boton delete
     let btnDelete: HTMLElement = document.createElement('SPAN')!;
@@ -126,8 +226,6 @@ export class ExperienciasComponent implements OnInit {
 
     for(let i = 0; i < arrBtnDeleteExperiencia.length; i++){
         arrBtnDeleteExperiencia[i].addEventListener('click', ()=>{
-            //let boxPadreAEliminar = arrBtnDeleteExperiencia[i]!.parentNode!.parentNode;
-            //boxPadreAEliminar.remove();
             let boxPadreAEliminar = arrBtnDeleteExperiencia[i]!.parentNode!.parentNode;
             let padreDelPadre = boxPadreAEliminar!.parentNode;
             padreDelPadre!.removeChild(boxPadreAEliminar!);
@@ -139,14 +237,11 @@ export class ExperienciasComponent implements OnInit {
     let arrBtnEditExperiencia = document.querySelectorAll('.btn-edit-experiencia');
 
     for(let i = 0; i < arrBtnEditExperiencia.length; i++){
-        arrBtnEditExperiencia[i].addEventListener('click', ()=>{
-
-            //editElemEducacion(arrBtnEditExperiencia[i]);
-            
-        })
+      arrBtnEditExperiencia[i].addEventListener('click', ()=>{
+        this.editElemExperiencia(arrBtnEditExperiencia[i]);
+      })
     }
-
-}
+  }
 
  showBtnEdits(){
   document.getElementById('btn-experiencia-add')?.classList.toggle('edit-btn-add-block');
