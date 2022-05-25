@@ -30,6 +30,7 @@ export class EducacionesComponent implements OnInit {
   }
   
   // Mostrar los botones al clickear en "habilitar edits"
+  flagTest: boolean = true;
   showBtnEdit(){
     document.getElementById('btn-educacion-add')?.classList.toggle('edit-btn-add-block');
 
@@ -37,8 +38,10 @@ export class EducacionesComponent implements OnInit {
     for(let i = 0; i < elementos.length; i++){
         elementos[i].children[0].classList.toggle('box-edit-flex')
     }
-
-    this.activarBtnsEditEducacion();
+    if(this.flagTest){
+      this.activarBtnsEditEducacion();
+      this.flagTest = false;
+    }
   }
 
   // Editar elemento
@@ -189,6 +192,27 @@ export class EducacionesComponent implements OnInit {
     inputInstituto.value = "";
     inputTitulo.value = "";
     inputDescripcion.value = "";
+  }
+
+  upgradeEducacion(){
+    this.addNewEducacion()
+    setTimeout(()=>{
+      let elementos = document.querySelectorAll('.educacion .container-seccion .box-seccion')
+      for(let i = 0; i < elementos.length; i++){
+        if(!elementos[i].children[0].className.includes('box-edit-flex')){
+          elementos[i].children[0].classList.add('box-edit-flex');
+        }
+      }
+      elementos[0].children[0].children[0].addEventListener('click',()=>{
+        this.editElemEducacion(elementos[0].children[0].children[0]);
+      })
+      elementos[0].children[0].children[1].addEventListener('click',()=>{
+        let boxPadreAEliminar = elementos[0].children[0].children[1]!.parentNode!.parentNode;
+        let padreDelPadre = boxPadreAEliminar!.parentNode;
+        padreDelPadre!.removeChild(boxPadreAEliminar!);
+      })
+    },500)
+   
   }
 
 }
