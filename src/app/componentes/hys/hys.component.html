@@ -1,17 +1,17 @@
 <section class="hys section-style">
 
-    <span class="material-icons material-icons-outlined edit-btn" id="btn-hys-main">
+    <span class="material-icons material-icons-outlined edit-btn menu-edit" id="btn-hys-main" (click)="showBtnEdits()">
         edit
     </span>
 
-    <span class="material-icons material-icons-outlined edit-btn edit-btn-add" id="btn-hys-add">
+    <span class="material-icons material-icons-outlined edit-btn edit-btn-add" id="btn-hys-add" (click)="abrirModalNew()">
         add_circle_outline
     </span>
 
     <div class="modal-ventana" id="modal-edit-hys">
         <form novalidate class="form-login form-edit">
             <!-- <i class="fa-solid fa-xmark modal-close-btn" id="btn-edit-hys-close"></i> -->
-            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-hys-close"></fa-icon>
+            <fa-icon [icon]="faTimes" class="modal-close-btn" id="btn-edit-hys-close" (click)="cerrarModalNew()"></fa-icon>
             <h2 class="form-login-title">Modo Edición!</h2>
             <div class="modal-box user-box modal-box-edit">
                 <label for="new-input-hys-skill" id="new-label-hys-skill" class="label-modal">Skill:</label>
