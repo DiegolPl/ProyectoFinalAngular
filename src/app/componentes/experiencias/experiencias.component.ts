@@ -246,6 +246,7 @@ export class ExperienciasComponent implements OnInit {
     }
   }
 
+ flagTest: boolean = true;
  showBtnEdits(){
   document.getElementById('btn-experiencia-add')?.classList.toggle('edit-btn-add-block');
 
@@ -253,7 +254,10 @@ export class ExperienciasComponent implements OnInit {
   for(let i = 0; i < elementos.length; i++){
       elementos[i].children[0].classList.toggle('box-edit-flex')
   }
-  this.activarBtnsEditExperiencia();
+  if(this.flagTest){
+    this.activarBtnsEditExperiencia();
+    this.flagTest = false;
+  }
  }
   // Nuevo
   // for(_indice = 0; i < Math.round((this.miPorfolio.experiencias.length) / 2) - 1; i++){
