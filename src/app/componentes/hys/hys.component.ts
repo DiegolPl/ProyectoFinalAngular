@@ -162,4 +162,45 @@ export class HysComponent implements OnInit {
       this.flagTest = false;
     }
    }
+
+     // Agregar nueva habilidad
+  addNewHys(){
+    let inputSkill = document.getElementById('new-input-hys-skill') as HTMLInputElement;
+    let inputPorcentaje = document.getElementById('new-input-hys-porcentaje') as HTMLInputElement;
+
+    if(inputSkill.value === '' || inputPorcentaje.value === ''){
+      return alert('No debes dejar campos vacios')
+    }
+
+    this.myPorfolio.hys.push({
+      "nombre": inputSkill.value,
+      "style": `width: ${inputPorcentaje.value}%`,
+      "id": `skill-${inputSkill.value.toLowerCase()}`
+    })
+
+    document.getElementById('modal-edit-hys')?.classList.toggle('modal-ventana-active');
+    inputSkill.value = "";
+    inputPorcentaje.value = "";
+  }
+
+  upgradeHys(){
+    this.addNewHys()
+    setTimeout(()=>{
+      let elementos = document.querySelectorAll('.hys .container-seccion .box-seccion')
+      for(let i = 0; i < elementos.length; i++){
+        if(!elementos[i].children[0].className.includes('box-edit-flex')){
+          elementos[i].children[0].classList.add('box-edit-flex');
+        }
+      }
+      elementos[elementos.length - 1].children[0].children[0].addEventListener('click',()=>{
+        this.editElemHys(elementos[elementos.length - 1].children[0].children[0]);
+      })
+      elementos[elementos.length - 1].children[0].children[1].addEventListener('click',()=>{
+        let boxPadreAEliminar = elementos[elementos.length - 1].children[0].children[1]!.parentNode!.parentNode;
+        let padreDelPadre = boxPadreAEliminar!.parentNode;
+        padreDelPadre!.removeChild(boxPadreAEliminar!);
+      })
+    },500)
+   
+  }
 }
