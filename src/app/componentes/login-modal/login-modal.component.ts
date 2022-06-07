@@ -80,6 +80,9 @@ export class LoginModalComponent implements OnInit {
       document.getElementById('btn-logout')?.classList.toggle('d-flex');
       // Les quito la posibilidad de redireccion a los links de los proyectos
       document.querySelectorAll('.proyecto A').forEach(el => el.classList.add('pointer-event-none'));
+
+      
+
     }else {
       // Si se equivocan en el usuario o contraseña se los hago saber
       alert('Usuario y/o contraseña inválida');

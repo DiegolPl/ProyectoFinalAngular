@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class HeaderComponent implements OnInit {
   faInstagram = faInstagram;
   faUser = faUser;
   faBars = faBars;
+
+  myPorfolio:any = [];
 
   // Abrir menu desde el boton de hamburguesa en versiones moviles
   activarMenu(){
@@ -52,10 +55,14 @@ export class HeaderComponent implements OnInit {
     document.querySelectorAll('.material-icons-outlined').forEach(icono => icono.classList.remove('d-block'));
     // Les devuelvo el redireccionamiento a los proyectos
     document.querySelectorAll('.proyecto A').forEach(el => el.classList.remove('pointer-event-none'));
+    
   }
-  constructor() { }
+  constructor(private dataPorfolio: PorfolioService) { }
 
   ngOnInit(): void {
+    this.dataPorfolio.getDatos().subscribe(data=>{
+      this.myPorfolio = data;
+    })
   }
 
 }
