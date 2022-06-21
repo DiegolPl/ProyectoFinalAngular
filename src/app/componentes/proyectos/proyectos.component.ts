@@ -24,8 +24,25 @@ export class ProyectosComponent implements OnInit {
   
 
   flagTest: boolean = true;
+  desactivarEnlaces: boolean = true;
   showBtnEdit(){
+    console.log(this.desactivarEnlaces)
     document.getElementById('btn-proyecto-add')?.classList.toggle('edit-btn-add-block');
+
+    //Solucion a problema de redireccion de los enlaces al momento de querer darle a los botones de edit en cada proyecto
+    document.querySelectorAll('.proyecto A').forEach(el => el.classList.toggle('pointer-event-none'));
+    let arrEnlaces = document.querySelectorAll('.proyecto A');
+
+    if(this.desactivarEnlaces){
+      document.querySelectorAll('.proyecto A').forEach(el => el.removeAttribute('href'));
+      this.desactivarEnlaces = false;
+    }else{
+      for(let i = 0; i < arrEnlaces.length; i++){
+        arrEnlaces[i].setAttribute('href',`${this.myPorfolio.proyectos[i]["url-proyecto"]}`)
+      }
+      this.desactivarEnlaces = true;
+    }
+    //Fin solucion
 
     let elementos = document.querySelectorAll('.proyecto .container-seccion .card-proyecto')
     for(let i = 0; i < elementos.length; i++){
