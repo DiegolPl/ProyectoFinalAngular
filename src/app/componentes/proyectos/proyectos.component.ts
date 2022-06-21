@@ -75,7 +75,7 @@ export class ProyectosComponent implements OnInit {
 
     for(let i = 0; i < arrBtnEditProyecto.length; i++){
         arrBtnEditProyecto[i].addEventListener('click', ()=>{
-            //this.editElemProyecto(arrBtnEditProyecto[i]);
+            this.editElemProyecto(arrBtnEditProyecto[i]);
             //editElemProyecto(arrBtnEditProyecto[i]);
             
         })
@@ -140,7 +140,7 @@ export class ProyectosComponent implements OnInit {
         }
       }
       elementos[elementos.length - 1].children[0].children[0].addEventListener('click',()=>{
-        //this.editElemHys(elementos[elementos.length - 1].children[0].children[0]);
+        this.editElemProyecto(elementos[elementos.length - 1].children[0].children[0]);
       })
       elementos[elementos.length - 1].children[0].children[1].addEventListener('click',()=>{
         let boxPadreAEliminar = elementos[elementos.length - 1].children[0].children[1]!.parentNode!.parentNode;
@@ -150,5 +150,134 @@ export class ProyectosComponent implements OnInit {
       elementos[elementos.length - 1].removeAttribute('href');
     },500)
    
+  }
+
+  editElemProyecto(el:any){
+    alert("Anda")
+    let boxPadreAEditar = el!.parentNode!.parentNode;
+
+        let textoNombreElemento = boxPadreAEditar!.children[2].children[0].textContent;
+        let indiceUltimoGuion = textoNombreElemento.lastIndexOf('-');
+        let nombreElemento = textoNombreElemento.slice(0, indiceUltimoGuion - 1)
+    
+        let proyectos = this.myPorfolio.proyectos;
+
+        console.log(nombreElemento);
+        let indiceElemento = proyectos.findIndex((elem: any) => elem.nombre === nombreElemento);
+        console.log(indiceElemento);
+        
+        let datos = {
+          imagen: proyectos[indiceElemento]["url-img"],    //Hay un error en la carga o guardado de la foto
+          nombre: proyectos[indiceElemento].nombre,
+          fecha: proyectos[indiceElemento].fecha,
+          descripcion: proyectos[indiceElemento].descripcion,
+          "url-proyecto": proyectos[indiceElemento]["url-proyecto"]
+        }
+
+        // Creo la ventana modal
+        let ventanaModal = document.createElement('DIV');
+        ventanaModal.classList.add('modal-ventana');
+        ventanaModal.classList.add('modal-ventana-active');
+        document.getElementsByTagName('body')[0].appendChild(ventanaModal);       
+
+        // Creo el formulario de edicion
+        let formulario = document.createElement('FORM');
+        formulario.classList.add('form-login');
+        formulario.classList.add('form-edit');
+        ventanaModal.appendChild(formulario);
+
+        // Creacion de titulo
+        let titulo = document.createElement('H2');
+        titulo.classList.add('form-login-title')
+        let textoTitulo = document.createTextNode('Modo edicion!');
+        titulo.appendChild(textoTitulo);
+        formulario.appendChild(titulo);
+
+        // Creacion de boton close
+        let btnCerrar = document.createElement('I');
+        btnCerrar.classList.add('fa-solid');
+        btnCerrar.classList.add('fa-xmark');
+        btnCerrar.classList.add('modal-close-btn');
+        formulario.appendChild(btnCerrar);
+
+        // Evento boton close
+        btnCerrar.addEventListener('click', ()=>{
+            ventanaModal.classList.remove('modal-ventana-active');
+            ventanaModal.remove();
+        })
+
+        // Creacion de box y sus inputs
+        function creadorBoxInputs(id:any, nameLabel:any, value:any, type:any){
+
+          // Box container
+          let box = document.createElement('DIV');
+          box.classList.add('modal-box');   
+          box.classList.add('user-box');   
+          box.classList.add('modal-box-edit');
+          formulario.appendChild(box);
+          
+          // Label
+          let label = document.createElement('LABEL');
+          label.classList.add('label-modal');
+          label.setAttribute('for',`name-input-${id}`);
+          label.setAttribute('id',`name-label-${id}`);
+          let textoLabel = document.createTextNode(`${nameLabel}`);
+          label.appendChild(textoLabel);
+          box.appendChild(label);
+
+          // Input
+          let input = document.createElement('INPUT');
+          input.classList.add('input-modal');
+          input.setAttribute('id',`name-input-${id}`);
+          input.setAttribute('type',`${type}`);
+          input.setAttribute('value',`${value}`);
+          box.appendChild(input);
+          
+      }
+      creadorBoxInputs('img-proyecto','Imagen: ', datos.imagen, "file");
+      creadorBoxInputs('name-proyecto','Nombre: ', datos.nombre, "text");
+      creadorBoxInputs('fecha-proyecto','Fecha: ', datos.fecha, "number");
+      creadorBoxInputs('descripcion-proyecto','Descripcion: ', datos.descripcion, "text");
+      creadorBoxInputs('link-proyecto','Link: ', datos["url-proyecto"], "text");
+
+      // Boton
+      let boton = document.createElement('INPUT');
+      boton.classList.add('form-login-btn');
+      boton.setAttribute('id','name-boton-edit-hys');
+      boton.setAttribute('type','button');
+      boton.setAttribute('value','Editar');
+      formulario.appendChild(boton);
+
+      
+
+      boton.addEventListener('click',()=>{
+          let inputImagen = document.getElementById('name-input-img-proyecto') as HTMLInputElement;
+          console.log(inputImagen.value)
+
+          //Correccion de la url de la foto
+          let newSrc;
+          if(inputImagen.value){
+            let valorInputImg = String(inputImagen.value);
+            let lastSlashInputImg = valorInputImg.lastIndexOf('\\');    //Index del ultimo \
+            let lastSlashSrcImgActual = this.myPorfolio.urlImgPerfil.lastIndexOf('/');
+            let newSrcParteUno = this.myPorfolio.urlImgPerfil.slice(0, lastSlashSrcImgActual + 1);
+            let newSrcParteDos = valorInputImg.slice(lastSlashInputImg + 1, valorInputImg.length);
+            newSrc = newSrcParteUno + newSrcParteDos;
+          }
+  
+          console.log(newSrc);
+
+          proyectos[indiceElemento]["url-img"] = newSrc;
+          let inputName = document.getElementById('name-input-name-proyecto') as HTMLInputElement;
+          proyectos[indiceElemento].nombre = inputName.value;
+          let inputFecha = document.getElementById('name-input-fecha-proyecto') as HTMLInputElement;
+          proyectos[indiceElemento].fecha = inputFecha.value;
+          let inputDescripcion = document.getElementById('name-input-descripcion-proyecto') as HTMLInputElement;
+          proyectos[indiceElemento].descripcion = inputDescripcion.value;
+          let inputLink = document.getElementById('name-input-link-proyecto') as HTMLInputElement;
+          proyectos[indiceElemento]["url-proyecto"] = inputLink.value;
+          // ventanaModal.classList.remove('modal-ventana-active');
+          ventanaModal.remove();
+      })
   }
 }
