@@ -82,4 +82,73 @@ export class ProyectosComponent implements OnInit {
     }
   }
 
+  abrirModalNew(){
+    document.getElementById('modal-edit-proyecto')?.classList.toggle('modal-ventana-active');
+  }
+
+  cerrarModalNew(){
+    document.getElementById('modal-edit-proyecto')?.classList.toggle('modal-ventana-active');
+  }
+  
+  addNewProyecto(){
+    let inputImg = document.getElementById('edit-proyecto-input-img') as HTMLInputElement;
+    let inputTitulo = document.getElementById('edit-proyecto-input-titulo') as HTMLInputElement;
+    let inputFecha = document.getElementById('edit-proyecto-input-fecha') as HTMLInputElement;
+    let inputDescripcion = document.getElementById('edit-proyecto-input-descripcion') as HTMLInputElement;
+    let inputLink = document.getElementById('edit-proyecto-input-link') as HTMLInputElement;
+
+    if(inputImg.value === '' || inputTitulo.value === '' || inputDescripcion.value === '' || inputFecha.value === '' || inputLink.value === ''){
+      return alert('No debes dejar campos vacios')
+    }
+
+     // Si me pasan una ruta para la imagen la cambio x la que esta puesta
+     let newSrc;
+     if(inputImg.value){
+      let valorInputImg = String(inputImg.value);
+      let lastSlashInputImg = valorInputImg.lastIndexOf('\\');    //Index del ultimo \
+      let lastSlashSrcImgActual = this.myPorfolio.urlImgPerfil.lastIndexOf('/');
+      let newSrcParteUno = this.myPorfolio.urlImgPerfil.slice(0, lastSlashSrcImgActual + 1);
+      let newSrcParteDos = valorInputImg.slice(lastSlashInputImg + 1, valorInputImg.length);
+      newSrc = newSrcParteUno + newSrcParteDos;
+      
+    }
+
+    this.myPorfolio.proyectos.push({
+      "nombre": inputTitulo.value,
+      "fecha": inputFecha.value,
+      "descripcion": inputDescripcion.value,
+      "url-img": newSrc,
+      "url-proyecto": inputLink.value
+    })
+
+    document.getElementById('modal-edit-proyecto')?.classList.toggle('modal-ventana-active');
+    inputImg.value = "";
+    inputTitulo.value = "";
+    inputFecha.value = "";
+    inputDescripcion.value = "";
+    inputLink.value = "";
+  }
+
+  upgradeProyectos(){
+    this.addNewProyecto()
+
+    setTimeout(()=>{
+      let elementos = document.querySelectorAll('.proyecto .container-seccion .card-proyecto')
+      for(let i = 0; i < elementos.length; i++){
+        if(!elementos[i].children[0].className.includes('box-edit-flex')){
+          elementos[i].children[0].classList.add('box-edit-flex');
+        }
+      }
+      elementos[elementos.length - 1].children[0].children[0].addEventListener('click',()=>{
+        //this.editElemHys(elementos[elementos.length - 1].children[0].children[0]);
+      })
+      elementos[elementos.length - 1].children[0].children[1].addEventListener('click',()=>{
+        let boxPadreAEliminar = elementos[elementos.length - 1].children[0].children[1]!.parentNode!.parentNode;
+        let padreDelPadre = boxPadreAEliminar!.parentNode;
+        padreDelPadre!.removeChild(boxPadreAEliminar!);
+      })
+      elementos[elementos.length - 1].removeAttribute('href');
+    },500)
+   
+  }
 }

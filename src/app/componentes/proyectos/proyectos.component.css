@@ -37,6 +37,7 @@
 .card-bottom {
     padding: 1rem 2rem;
     height: 170px;
+    width: 100%;
 }
 
 .card-title {
